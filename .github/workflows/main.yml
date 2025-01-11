@@ -21,7 +21,7 @@ jobs:
     - name: changing to source
       run: cd demo 
     - name: Build with Maven
-           mvn clean install
+      run:  mvn clean install
 
     - name: Build Docker image
       run: |
