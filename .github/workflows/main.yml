@@ -18,8 +18,9 @@ jobs:
       with:
         java-version: '11'
 
+    - name: changing to source
+      run: cd demo 
     - name: Build with Maven
-      run: cd demo | 
            mvn clean install
 
     - name: Build Docker image
