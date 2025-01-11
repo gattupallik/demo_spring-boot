@@ -19,9 +19,9 @@ jobs:
         java-version: '11'
 
     - name: changing to source
-      run:  pwd 
+      run: cd demo_spring-boot/demo 
     - name: Build with Maven
-      run:  ls
+      run:  mvn clean install
     - name: Back to root
       run: cd ..
     - name: Build Docker image
