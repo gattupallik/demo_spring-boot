@@ -22,9 +22,9 @@ jobs:
     - name: "Setup Maven"
       run: |
         echo "Installing Maven"
-        apt-get update
-        apt-get install -y maven
-        mvn --version
+        sudo apt-get update
+        sudo apt-get install -y maven
+        sudo mvn --version
 
     - name: changing to source
       run: cd demo
