@@ -1,0 +1,24 @@
+FROM ubuntu:latest
+
+# Install OpenJDK 11
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Maven
+RUN apt-get update && \
+    apt-get install -y maven && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy project files
+COPY . /app
+
+RUN cd demo
+WORKDIR /app/demo
+RUN mvn clean install
+CMD ls -l
+
+
