@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
 
     steps:
     - name: Checkout code
@@ -17,6 +18,13 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: '11'
+        
+    - name: "Setup Maven"
+      script:
+        - echo "Installing Maven"
+        - apt-get update
+        - apt-get install -y maven
+        - mvn --version
 
     - name: changing to source
       run: cd demo
